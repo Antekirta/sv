@@ -1,0 +1,14 @@
+@import "../../styles/variables.scss";
+
+.app-header {
+  padding: $offset;
+  background-color: var(--color__blue);
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+      margin-right: $offset;
+  }
+}
