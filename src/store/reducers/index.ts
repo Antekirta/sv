@@ -1,7 +1,7 @@
 import { ACTIONS_TYPES } from "./../actions/index";
 import { AnyAction } from "redux";
 
-interface iState {
+export interface iState {
   app: {
     inProgress: boolean;
     error: string;

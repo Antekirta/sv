@@ -1,11 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import "./App.scss";
 import { store } from "./store";
-import { Home } from "./components/Home/Home";
-import { AdminPanel } from "./components/AdminPanel/AdminPanel";
-import { AppHeader, iAppHeaderProps } from "./components/AppHeader/AppHeader";
+import { AppHeader } from "./components/AppHeader/AppHeader";
+import AppBody from "./components/AppBody/AppBody";
 
 const mainMenuLinks = [
   { href: "/", title: "Home" },
@@ -13,21 +12,18 @@ const mainMenuLinks = [
 ];
 
 const App: React.FC = () => {
+  const [loginForm, renderLoginForm] = useState(null);
+
   return (
     <Provider store={store}>
+      <div id="modal"></div>
+
       <Router>
         <section className="app">
           <AppHeader links={mainMenuLinks} />
 
           <main className="app__main">
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/admin">
-                <AdminPanel />
-              </Route>
-            </Switch>
+            <AppBody />
           </main>
         </section>
       </Router>
