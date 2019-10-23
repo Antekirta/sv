@@ -3,9 +3,11 @@ export const sendLoggingRequest = (
   password: string
 ): Promise<boolean> => {
   return new Promise((resolve, reject) => {
-    intelligentCredentialsCheck(userName, password)
-      ? resolve(true)
-      : reject("Get outta here, stranger!");
+    setTimeout(() => {
+      intelligentCredentialsCheck(userName, password)
+        ? resolve(true)
+        : reject("Get outta here, stranger!");
+    }, 2000);
   });
 };
 
