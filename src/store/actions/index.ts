@@ -8,8 +8,6 @@ export const ACTIONS_TYPES = {
 };
 
 export const loginStart = (userName: string, password: string) => {
-  console.log("login action outside");
-
   return async (dispatch: Dispatch) => {
     dispatch({
       type: ACTIONS_TYPES.LOGIN,
@@ -18,8 +16,6 @@ export const loginStart = (userName: string, password: string) => {
         password
       }
     });
-
-    console.log("login action inside!");
 
     try {
       await sendLoggingRequest(userName, password);

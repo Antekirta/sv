@@ -37,7 +37,7 @@ export const rootReducer = (state = initialState, action: AnyAction) => {
           inProgress: false
         },
         user: {
-          name: action.payload.userName,
+          name: action.payload,
           isLogged: true
         }
       } as iState);
@@ -45,7 +45,7 @@ export const rootReducer = (state = initialState, action: AnyAction) => {
       return Object.assign({}, state, {
         app: {
           inProgress: false,
-          error: action.payload.error
+          error: action.payload
         },
         user: {
           name: "",

@@ -15,3 +15,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+}
+
+input {
+  margin: 15px;
+}
